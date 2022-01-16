@@ -1,4 +1,6 @@
-This version of this app requires an Arduino and Raspberry Pi to display the UI via an LCD screen.
+A group project for a software design class, this app allows users to view the current time, weather, and their most recently played Spotify tracks and Twitter timeline. 
+
+This version of this app requires an Arduino and Raspberry Pi to display the UI via an LCD screen as the intended final design for this project.
 
 LIBRARY INSTALLATION:
 sudo apt-get update -y
