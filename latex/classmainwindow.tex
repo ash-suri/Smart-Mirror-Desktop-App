@@ -1,0 +1,278 @@
+\hypertarget{classmainwindow}{}\doxysection{mainwindow Class Reference}
+\label{classmainwindow}\index{mainwindow@{mainwindow}}
+
+
+User Interface class that is driven by data sent from hardware \& A\+P\+Is Class implements button triggers for A\+PI calls to display Spotify and Weather data, and uses Q\+Threads to display whether motion is detected or not from the \mbox{\hyperlink{classMotionSensorThread}{Motion\+Sensor\+Thread}} Class.  
+
+
+
+
+{\ttfamily \#include $<$mainwindow.\+h$>$}
+
+
+
+Inheritance diagram for mainwindow\+:
+% FIG 0
+
+
+Collaboration diagram for mainwindow\+:
+% FIG 1
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classmainwindow_ac31deb8eb25a1ac1627ad8510f616863}{on\+Sensor\+Reading}} (std\+::string reading)
+\begin{DoxyCompactList}\small\item\em Function to retrieve data from \mbox{\hyperlink{classMotionSensorThread}{Motion\+Sensor\+Thread}} Class that handles Raspberry Pi-\/\+Arduino P\+IR sensor monitoring Every 5 seconds when sensor readings updated and emitted from \mbox{\hyperlink{classMotionSensorThread}{Motion\+Sensor\+Thread}} Class, on\+Sensor\+Reading receives resultant string indicating if motion detected or not. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmainwindow_a0fdd6899038444a0c46052859468f67f}{mainwindow}} (Q\+Widget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructor to initiate button-\/handler connections and thread process for polling P\+IR sensor data from Raspberry Pi-\/\+Arduino set-\/up Initialize all button on-\/click handlers and trigger thread to fetch sensor readings continously in background. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmainwindow_a06f94eb348882bc50e52395943a952cc}{make\+\_\+connection}} (Q\+Push\+Button $\ast$btn, Q\+Label $\ast$label)
+\begin{DoxyCompactList}\small\item\em Function to automate QT connection process for a particular button and its label Connect button to its label such that when the button is pressed, its label is sent as a string to the \mbox{\hyperlink{classModel}{Model}} class to generate an A\+PI call \& retrieve, show data for the UI. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Push\+Button $\ast$ \mbox{\hyperlink{classmainwindow_a070149a12f4f8bcb79b3f06819818eb0}{btn\+\_\+1}}
+\item 
+Q\+Push\+Button $\ast$ \mbox{\hyperlink{classmainwindow_aa36f7458b3b5893c09f71239a0b0fd15}{btn\+\_\+2}}
+\item 
+Q\+Push\+Button $\ast$ \mbox{\hyperlink{classmainwindow_ae1690670c28d4bfff87d6d128d34052c}{btn\+\_\+3}}
+\item 
+Q\+Push\+Button $\ast$ \mbox{\hyperlink{classmainwindow_af538f820b08aad9a75fc92f48d5e44aa}{btn\+\_\+4}}
+\item 
+Q\+Label $\ast$ \mbox{\hyperlink{classmainwindow_a638d9e0a995beb36744831e509c0f34c}{text\+\_\+1}}
+\item 
+Q\+Label $\ast$ \mbox{\hyperlink{classmainwindow_a7dd14e0d62990823ee8a9afb38940dd3}{text\+\_\+2}}
+\item 
+Q\+Label $\ast$ \mbox{\hyperlink{classmainwindow_afc046a16cbdc6c3bd00be3dce2c1609e}{text\+\_\+3}}
+\item 
+Q\+Label $\ast$ \mbox{\hyperlink{classmainwindow_aa884b9ef35de48a30d653fa587e47e2c}{text\+\_\+4}}
+\item 
+Q\+Label $\ast$ \mbox{\hyperlink{classmainwindow_a40fd45b82359fa48036a4b544f7029dd}{sensor\+\_\+text}}
+\item 
+\mbox{\hyperlink{classModel}{Model}} $\ast$ \mbox{\hyperlink{classmainwindow_afcf4535939b3bf0a0aa47b954876f65c}{m}}
+\item 
+Q\+Label $\ast$ \mbox{\hyperlink{classmainwindow_a04b2ba6f838ca9e9e8206cdf91527555}{title}}
+\item 
+\mbox{\hyperlink{classMotionSensorThread}{Motion\+Sensor\+Thread}} $\ast$ \mbox{\hyperlink{classmainwindow_a7635f13e4e98c08777ce50411881a8b3}{sensor}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+User Interface class that is driven by data sent from hardware \& A\+P\+Is Class implements button triggers for A\+PI calls to display Spotify and Weather data, and uses Q\+Threads to display whether motion is detected or not from the \mbox{\hyperlink{classMotionSensorThread}{Motion\+Sensor\+Thread}} Class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmainwindow_a0fdd6899038444a0c46052859468f67f}\label{classmainwindow_a0fdd6899038444a0c46052859468f67f}} 
+\index{mainwindow@{mainwindow}!mainwindow@{mainwindow}}
+\index{mainwindow@{mainwindow}!mainwindow@{mainwindow}}
+\doxysubsubsection{\texorpdfstring{mainwindow()}{mainwindow()}}
+{\footnotesize\ttfamily mainwindow\+::mainwindow (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor to initiate button-\/handler connections and thread process for polling P\+IR sensor data from Raspberry Pi-\/\+Arduino set-\/up Initialize all button on-\/click handlers and trigger thread to fetch sensor readings continously in background. 
+
+Main function to initiate start of Q\+Application.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Addresses} & of the button and its label \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Ashwin Singh, Ashvinder Suri
+
+Ashwin Singh 
+\end{DoxyAuthor}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8                                        : QMainWindow(parent) \{}
+\DoxyCodeLine{9     qRegisterMetaType<std::string>(\textcolor{stringliteral}{"std::string"});}
+\DoxyCodeLine{10     \mbox{\hyperlink{classmainwindow_a7635f13e4e98c08777ce50411881a8b3}{sensor}} = \textcolor{keyword}{new} \mbox{\hyperlink{classMotionSensorThread}{MotionSensorThread}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{11     connect(\mbox{\hyperlink{classmainwindow_a7635f13e4e98c08777ce50411881a8b3}{sensor}}, \&\mbox{\hyperlink{classMotionSensorThread_a52e7d402c7128f575419afad44e2d056}{MotionSensorThread::sendReading}}, \textcolor{keyword}{this}, \&\mbox{\hyperlink{classmainwindow_ac31deb8eb25a1ac1627ad8510f616863}{mainwindow::onSensorReading}});}
+\DoxyCodeLine{12     \mbox{\hyperlink{classmainwindow_a7635f13e4e98c08777ce50411881a8b3}{sensor}}-\/>start();  }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14     \mbox{\hyperlink{classmainwindow_a070149a12f4f8bcb79b3f06819818eb0}{btn\_1}} = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"weather"}, \textcolor{keyword}{this});}
+\DoxyCodeLine{15     \mbox{\hyperlink{classmainwindow_aa36f7458b3b5893c09f71239a0b0fd15}{btn\_2}} = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"spotify"}, \textcolor{keyword}{this});}
+\DoxyCodeLine{16     \mbox{\hyperlink{classmainwindow_ae1690670c28d4bfff87d6d128d34052c}{btn\_3}} = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"twitter"}, \textcolor{keyword}{this});}
+\DoxyCodeLine{17     \mbox{\hyperlink{classmainwindow_af538f820b08aad9a75fc92f48d5e44aa}{btn\_4}} = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"time"}, \textcolor{keyword}{this});}
+\DoxyCodeLine{18     \mbox{\hyperlink{classmainwindow_a04b2ba6f838ca9e9e8206cdf91527555}{title}} = \textcolor{keyword}{new} QLabel(\textcolor{stringliteral}{"Welcome to the MEGA-\/MIRROR John, how may I help you?"}, \textcolor{keyword}{this});}
+\DoxyCodeLine{19     \mbox{\hyperlink{classmainwindow_a638d9e0a995beb36744831e509c0f34c}{text\_1}} = \textcolor{keyword}{new} QLabel(\textcolor{stringliteral}{"Show me the weather outside"}, \textcolor{keyword}{this});}
+\DoxyCodeLine{20     \mbox{\hyperlink{classmainwindow_a7dd14e0d62990823ee8a9afb38940dd3}{text\_2}} = \textcolor{keyword}{new} QLabel(\textcolor{stringliteral}{"Show me my recently played Spotify tracks"}, \textcolor{keyword}{this});}
+\DoxyCodeLine{21     \mbox{\hyperlink{classmainwindow_afc046a16cbdc6c3bd00be3dce2c1609e}{text\_3}} = \textcolor{keyword}{new} QLabel(\textcolor{stringliteral}{"Show me Jack Dorsey's tweets"}, \textcolor{keyword}{this});}
+\DoxyCodeLine{22     \mbox{\hyperlink{classmainwindow_aa884b9ef35de48a30d653fa587e47e2c}{text\_4}} = \textcolor{keyword}{new} QLabel(\textcolor{stringliteral}{"What's the time?"}, \textcolor{keyword}{this});}
+\DoxyCodeLine{23     \mbox{\hyperlink{classmainwindow_a40fd45b82359fa48036a4b544f7029dd}{sensor\_text}} = \textcolor{keyword}{new} QLabel(\textcolor{stringliteral}{"Motion Detection"}, \textcolor{keyword}{this});}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \mbox{\hyperlink{classmainwindow_a04b2ba6f838ca9e9e8206cdf91527555}{title}}-\/>setGeometry(QRect(QPoint(350, 0), QSize(1500,50)));}
+\DoxyCodeLine{26     \mbox{\hyperlink{classmainwindow_a638d9e0a995beb36744831e509c0f34c}{text\_1}}-\/>setGeometry(QRect(QPoint(0, 100), QSize(1500, 50)));}
+\DoxyCodeLine{27     \mbox{\hyperlink{classmainwindow_a070149a12f4f8bcb79b3f06819818eb0}{btn\_1}}-\/>setGeometry(QRect(QPoint(0, 200), QSize(1500, 50)));}
+\DoxyCodeLine{28     \mbox{\hyperlink{classmainwindow_aa36f7458b3b5893c09f71239a0b0fd15}{btn\_2}}-\/>setGeometry(QRect(QPoint(0, 300), QSize(1500, 50)));}
+\DoxyCodeLine{29     \mbox{\hyperlink{classmainwindow_a7dd14e0d62990823ee8a9afb38940dd3}{text\_2}}-\/>setGeometry(QRect(QPoint(0, 400), QSize(1500, 50)));}
+\DoxyCodeLine{30     \mbox{\hyperlink{classmainwindow_ae1690670c28d4bfff87d6d128d34052c}{btn\_3}}-\/>setGeometry(QRect(QPoint(0, 500), QSize(1500, 50)));}
+\DoxyCodeLine{31     \mbox{\hyperlink{classmainwindow_afc046a16cbdc6c3bd00be3dce2c1609e}{text\_3}}-\/>setGeometry(QRect(QPoint(0, 600), QSize(1500, 100)));}
+\DoxyCodeLine{32     \mbox{\hyperlink{classmainwindow_afc046a16cbdc6c3bd00be3dce2c1609e}{text\_3}}-\/>setWordWrap(\textcolor{keyword}{true});}
+\DoxyCodeLine{33     \mbox{\hyperlink{classmainwindow_af538f820b08aad9a75fc92f48d5e44aa}{btn\_4}}-\/>setGeometry(QRect(QPoint(0, 700), QSize(1500, 50)));}
+\DoxyCodeLine{34     \mbox{\hyperlink{classmainwindow_aa884b9ef35de48a30d653fa587e47e2c}{text\_4}}-\/>setGeometry(QRect(QPoint(0, 800), QSize(1500,50)));}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \mbox{\hyperlink{classmainwindow_a40fd45b82359fa48036a4b544f7029dd}{sensor\_text}}-\/>setGeometry(QRect(QPoint(0, 900), QSize(1500, 50)));}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \mbox{\hyperlink{classmainwindow_afcf4535939b3bf0a0aa47b954876f65c}{m}} = \textcolor{keyword}{new} \mbox{\hyperlink{classModel}{Model}}();}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \mbox{\hyperlink{classmainwindow_a06f94eb348882bc50e52395943a952cc}{make\_connection}}(\mbox{\hyperlink{classmainwindow_a070149a12f4f8bcb79b3f06819818eb0}{btn\_1}}, \mbox{\hyperlink{classmainwindow_a638d9e0a995beb36744831e509c0f34c}{text\_1}});}
+\DoxyCodeLine{41     \mbox{\hyperlink{classmainwindow_a06f94eb348882bc50e52395943a952cc}{make\_connection}}(\mbox{\hyperlink{classmainwindow_aa36f7458b3b5893c09f71239a0b0fd15}{btn\_2}}, \mbox{\hyperlink{classmainwindow_a7dd14e0d62990823ee8a9afb38940dd3}{text\_2}});}
+\DoxyCodeLine{42     \mbox{\hyperlink{classmainwindow_a06f94eb348882bc50e52395943a952cc}{make\_connection}}(\mbox{\hyperlink{classmainwindow_ae1690670c28d4bfff87d6d128d34052c}{btn\_3}}, \mbox{\hyperlink{classmainwindow_afc046a16cbdc6c3bd00be3dce2c1609e}{text\_3}});}
+\DoxyCodeLine{43     \mbox{\hyperlink{classmainwindow_a06f94eb348882bc50e52395943a952cc}{make\_connection}}(\mbox{\hyperlink{classmainwindow_af538f820b08aad9a75fc92f48d5e44aa}{btn\_4}}, \mbox{\hyperlink{classmainwindow_aa884b9ef35de48a30d653fa587e47e2c}{text\_4}});}
+\DoxyCodeLine{44 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmainwindow_a06f94eb348882bc50e52395943a952cc}\label{classmainwindow_a06f94eb348882bc50e52395943a952cc}} 
+\index{mainwindow@{mainwindow}!make\_connection@{make\_connection}}
+\index{make\_connection@{make\_connection}!mainwindow@{mainwindow}}
+\doxysubsubsection{\texorpdfstring{make\_connection()}{make\_connection()}}
+{\footnotesize\ttfamily void mainwindow\+::make\+\_\+connection (\begin{DoxyParamCaption}\item[{Q\+Push\+Button $\ast$}]{btn,  }\item[{Q\+Label $\ast$}]{label }\end{DoxyParamCaption})}
+
+
+
+Function to automate QT connection process for a particular button and its label Connect button to its label such that when the button is pressed, its label is sent as a string to the \mbox{\hyperlink{classModel}{Model}} class to generate an A\+PI call \& retrieve, show data for the UI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Addresses} & of the button and its label \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Ashwin Singh, Ashvinder Suri 
+\end{DoxyAuthor}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{46                                                                 \{}
+\DoxyCodeLine{47     connect(btn, \&QPushButton::clicked, \textcolor{keyword}{this}, [\textcolor{keyword}{this}, btn, label] () \{}
+\DoxyCodeLine{48                         std::string s = btn-\/>text().toStdString();}
+\DoxyCodeLine{49                         std::string output;}
+\DoxyCodeLine{50                         \mbox{\hyperlink{classmainwindow_afcf4535939b3bf0a0aa47b954876f65c}{m}}-\/>\mbox{\hyperlink{classModel_a974872d87c1d6e5886d5bc65fb8467f3}{update}}(s);}
+\DoxyCodeLine{51                         output = \mbox{\hyperlink{classmainwindow_afcf4535939b3bf0a0aa47b954876f65c}{m}}-\/>\mbox{\hyperlink{classModel_ab958dc401027c1706a6c58b84d7f1811}{show\_out}}();}
+\DoxyCodeLine{52                         label-\/>setText(QString::fromStdString(output));}
+\DoxyCodeLine{53            \});}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classmainwindow_ac31deb8eb25a1ac1627ad8510f616863}\label{classmainwindow_ac31deb8eb25a1ac1627ad8510f616863}} 
+\index{mainwindow@{mainwindow}!onSensorReading@{onSensorReading}}
+\index{onSensorReading@{onSensorReading}!mainwindow@{mainwindow}}
+\doxysubsubsection{\texorpdfstring{onSensorReading}{onSensorReading}}
+{\footnotesize\ttfamily void mainwindow\+::on\+Sensor\+Reading (\begin{DoxyParamCaption}\item[{std\+::string}]{reading }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Function to retrieve data from \mbox{\hyperlink{classMotionSensorThread}{Motion\+Sensor\+Thread}} Class that handles Raspberry Pi-\/\+Arduino P\+IR sensor monitoring Every 5 seconds when sensor readings updated and emitted from \mbox{\hyperlink{classMotionSensorThread}{Motion\+Sensor\+Thread}} Class, on\+Sensor\+Reading receives resultant string indicating if motion detected or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em String} & representing motion detection reading \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Ashwin Singh 
+\end{DoxyAuthor}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{57                                                   \{}
+\DoxyCodeLine{58     std::cout << \textcolor{stringliteral}{"Reading is: "} << reading << std::endl;}
+\DoxyCodeLine{59     \mbox{\hyperlink{classmainwindow_a40fd45b82359fa48036a4b544f7029dd}{sensor\_text}}-\/>setText(QString::fromStdString(reading));}
+\DoxyCodeLine{60 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmainwindow_a070149a12f4f8bcb79b3f06819818eb0}\label{classmainwindow_a070149a12f4f8bcb79b3f06819818eb0}} 
+\index{mainwindow@{mainwindow}!btn\_1@{btn\_1}}
+\index{btn\_1@{btn\_1}!mainwindow@{mainwindow}}
+\doxysubsubsection{\texorpdfstring{btn\_1}{btn\_1}}
+{\footnotesize\ttfamily Q\+Push\+Button$\ast$ mainwindow\+::btn\+\_\+1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmainwindow_aa36f7458b3b5893c09f71239a0b0fd15}\label{classmainwindow_aa36f7458b3b5893c09f71239a0b0fd15}} 
+\index{mainwindow@{mainwindow}!btn\_2@{btn\_2}}
+\index{btn\_2@{btn\_2}!mainwindow@{mainwindow}}
+\doxysubsubsection{\texorpdfstring{btn\_2}{btn\_2}}
+{\footnotesize\ttfamily Q\+Push\+Button$\ast$ mainwindow\+::btn\+\_\+2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmainwindow_ae1690670c28d4bfff87d6d128d34052c}\label{classmainwindow_ae1690670c28d4bfff87d6d128d34052c}} 
+\index{mainwindow@{mainwindow}!btn\_3@{btn\_3}}
+\index{btn\_3@{btn\_3}!mainwindow@{mainwindow}}
+\doxysubsubsection{\texorpdfstring{btn\_3}{btn\_3}}
+{\footnotesize\ttfamily Q\+Push\+Button$\ast$ mainwindow\+::btn\+\_\+3\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmainwindow_af538f820b08aad9a75fc92f48d5e44aa}\label{classmainwindow_af538f820b08aad9a75fc92f48d5e44aa}} 
+\index{mainwindow@{mainwindow}!btn\_4@{btn\_4}}
+\index{btn\_4@{btn\_4}!mainwindow@{mainwindow}}
+\doxysubsubsection{\texorpdfstring{btn\_4}{btn\_4}}
+{\footnotesize\ttfamily Q\+Push\+Button$\ast$ mainwindow\+::btn\+\_\+4\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmainwindow_afcf4535939b3bf0a0aa47b954876f65c}\label{classmainwindow_afcf4535939b3bf0a0aa47b954876f65c}} 
+\index{mainwindow@{mainwindow}!m@{m}}
+\index{m@{m}!mainwindow@{mainwindow}}
+\doxysubsubsection{\texorpdfstring{m}{m}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classModel}{Model}}$\ast$ mainwindow\+::m\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmainwindow_a7635f13e4e98c08777ce50411881a8b3}\label{classmainwindow_a7635f13e4e98c08777ce50411881a8b3}} 
+\index{mainwindow@{mainwindow}!sensor@{sensor}}
+\index{sensor@{sensor}!mainwindow@{mainwindow}}
+\doxysubsubsection{\texorpdfstring{sensor}{sensor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMotionSensorThread}{Motion\+Sensor\+Thread}}$\ast$ mainwindow\+::sensor\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmainwindow_a40fd45b82359fa48036a4b544f7029dd}\label{classmainwindow_a40fd45b82359fa48036a4b544f7029dd}} 
+\index{mainwindow@{mainwindow}!sensor\_text@{sensor\_text}}
+\index{sensor\_text@{sensor\_text}!mainwindow@{mainwindow}}
+\doxysubsubsection{\texorpdfstring{sensor\_text}{sensor\_text}}
+{\footnotesize\ttfamily Q\+Label$\ast$ mainwindow\+::sensor\+\_\+text\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmainwindow_a638d9e0a995beb36744831e509c0f34c}\label{classmainwindow_a638d9e0a995beb36744831e509c0f34c}} 
+\index{mainwindow@{mainwindow}!text\_1@{text\_1}}
+\index{text\_1@{text\_1}!mainwindow@{mainwindow}}
+\doxysubsubsection{\texorpdfstring{text\_1}{text\_1}}
+{\footnotesize\ttfamily Q\+Label$\ast$ mainwindow\+::text\+\_\+1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmainwindow_a7dd14e0d62990823ee8a9afb38940dd3}\label{classmainwindow_a7dd14e0d62990823ee8a9afb38940dd3}} 
+\index{mainwindow@{mainwindow}!text\_2@{text\_2}}
+\index{text\_2@{text\_2}!mainwindow@{mainwindow}}
+\doxysubsubsection{\texorpdfstring{text\_2}{text\_2}}
+{\footnotesize\ttfamily Q\+Label$\ast$ mainwindow\+::text\+\_\+2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmainwindow_afc046a16cbdc6c3bd00be3dce2c1609e}\label{classmainwindow_afc046a16cbdc6c3bd00be3dce2c1609e}} 
+\index{mainwindow@{mainwindow}!text\_3@{text\_3}}
+\index{text\_3@{text\_3}!mainwindow@{mainwindow}}
+\doxysubsubsection{\texorpdfstring{text\_3}{text\_3}}
+{\footnotesize\ttfamily Q\+Label$\ast$ mainwindow\+::text\+\_\+3\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmainwindow_aa884b9ef35de48a30d653fa587e47e2c}\label{classmainwindow_aa884b9ef35de48a30d653fa587e47e2c}} 
+\index{mainwindow@{mainwindow}!text\_4@{text\_4}}
+\index{text\_4@{text\_4}!mainwindow@{mainwindow}}
+\doxysubsubsection{\texorpdfstring{text\_4}{text\_4}}
+{\footnotesize\ttfamily Q\+Label$\ast$ mainwindow\+::text\+\_\+4\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmainwindow_a04b2ba6f838ca9e9e8206cdf91527555}\label{classmainwindow_a04b2ba6f838ca9e9e8206cdf91527555}} 
+\index{mainwindow@{mainwindow}!title@{title}}
+\index{title@{title}!mainwindow@{mainwindow}}
+\doxysubsubsection{\texorpdfstring{title}{title}}
+{\footnotesize\ttfamily Q\+Label$\ast$ mainwindow\+::title\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{mainwindow_8h}{mainwindow.\+h}}\item 
+\mbox{\hyperlink{mainwindow_8cpp}{mainwindow.\+cpp}}\end{DoxyCompactItemize}
